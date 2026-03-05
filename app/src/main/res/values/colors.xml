@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#FFC62828</color>
+    <color name="primary_variant">#FFB71C1C</color>
+    <color name="secondary">#FFEF5350</color>
+    <color name="secondary_variant">#FFD32F2F</color>
+    <color name="on_primary">#FFFFFFFF</color>
+    <color name="on_secondary">#FFFFFFFF</color>
+
+    <color name="background">#FF121212</color>
+    <color name="surface">#FF1E1E1E</color>
+    <color name="surface_elevated">#FF2A2A2A</color>
+    <color name="toolbar_background">#FF181818</color>
+    <color name="search_background">#FF2A2A2A</color>
+    <color name="card_background">#FF1E1E1E</color>
+
+    <color name="text_primary">#FFECECEC</color>
+    <color name="text_secondary">#FF9E9E9E</color>
+    <color name="text_hint">#FF6B6B6B</color>
+
+    <color name="code_background">#FF0D0D0D</color>
+    <color name="code_text">#FFEF5350</color>
+
+    <color name="divider">#1AFFFFFF</color>
+    <color name="switch_track_on">#66C62828</color>
+    <color name="switch_thumb_on">#FFC62828</color>
+    <color name="switch_track_off">#44666666</color>
+    <color name="switch_thumb_off">#FF757575</color>
+
+    <color name="status_bar">#FF0D0D0D</color>
+    <color name="hidden_badge">#33FF5252</color>
+    <color name="hidden_badge_text">#FFFF5252</color>
+    <color name="visible_badge">#3300E676</color>
+    <color name="visible_badge_text">#FF00E676</color>
+</resources>

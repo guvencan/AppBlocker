@@ -1,0 +1,35 @@
+<resources>
+    <string name="setup_title">Shizuku erforderlich</string>
+    <string name="setup_description">Shizuku muss installiert und aktiv sein,\num Apps auszublenden.</string>
+    <string name="setup_steps_title">Einrichtungsschritte</string>
+    <string name="setup_steps">1  Shizuku aus dem Play Store herunterladen\n\n2  USB-Debugging aktivieren\n\n3  Folgenden Befehl am PC ausführen</string>
+    <string name="setup_alt_method">Oder Shizuku-App öffnen und\nüber Wireless ADB starten.</string>
+    <string name="btn_retry">Erneut versuchen</string>
+
+    <string name="app_list_title">App-Ausblender</string>
+    <string name="search_hint">App suchen\u2026</string>
+    <string name="filter_system">System</string>
+    <string name="filter_hidden_only">Nur ausgeblendete</string>
+    <string name="empty_list">Keine Apps gefunden</string>
+
+    <string name="status_hidden">Ausgeblendet</string>
+    <string name="status_visible">Sichtbar</string>
+
+    <string name="action_show">Einblenden</string>
+    <string name="action_hide">Ausblenden</string>
+    <string name="action_delete">Löschen</string>
+    <string name="action_cancel">Abbrechen</string>
+
+    <string name="delete_title">App löschen</string>
+    <string name="delete_confirm_message">Sind Sie sicher, dass Sie %s löschen möchten?</string>
+    <string name="delete_note">Kann durch Zurücksetzen auf Werkseinstellungen wiederhergestellt werden.</string>
+
+    <string name="toast_shizuku_denied">Shizuku-Berechtigung verweigert</string>
+    <string name="toast_hidden">%s ausgeblendet</string>
+    <string name="toast_visible">%s sichtbar gemacht</string>
+    <string name="toast_deleted">%s gelöscht</string>
+    <string name="toast_failed">Fehlgeschlagen: %s</string>
+    <string name="toast_operation_failed">Vorgang fehlgeschlagen: %s</string>
+    <string name="toast_error">Fehler: %s</string>
+    <string name="toast_service_disconnected">Dienst nicht verbunden</string>
+</resources>

@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">SIMAppBlocker</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_title">Shizuku Required</string>
+    <string name="setup_description">Shizuku must be installed and running\nto hide applications.</string>
+    <string name="setup_steps_title">Setup Steps</string>
+    <string name="setup_steps">1  Download Shizuku from Play Store\n\n2  Enable USB Debugging\n\n3  Run the command below from PC</string>
+    <string name="setup_adb_command">adb shell sh /sdcard/Android/data/moe.shizuku.privileged.api/start.sh</string>
+    <string name="setup_alt_method">Or open Shizuku app and\nstart via Wireless ADB.</string>
+    <string name="btn_retry">Retry</string>
+
+    <!-- App List Screen -->
+    <string name="app_list_title">App Hider</string>
+    <string name="search_hint">Search app…</string>
+    <string name="filter_system">System</string>
+    <string name="filter_hidden_only">Hidden only</string>
+    <string name="empty_list">No apps found</string>
+
+    <!-- Status Badges -->
+    <string name="status_hidden">Hidden</string>
+    <string name="status_visible">Visible</string>
+
+    <!-- Action Dialog -->
+    <string name="action_show">Show</string>
+    <string name="action_hide">Hide</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+
+    <!-- Confirm Delete Dialog -->
+    <string name="delete_title">Delete App</string>
+    <string name="delete_confirm_message">Are you sure you want to delete %s?</string>
+    <string name="delete_note">Can be restored with a factory reset.</string>
+
+    <!-- Toasts -->
+    <string name="toast_shizuku_denied">Shizuku permission denied</string>
+    <string name="toast_hidden">%s hidden</string>
+    <string name="toast_visible">%s made visible</string>
+    <string name="toast_deleted">%s deleted</string>
+    <string name="toast_failed">Failed: %s</string>
+    <string name="toast_operation_failed">Operation failed: %s</string>
+    <string name="toast_error">Error: %s</string>
+    <string name="toast_service_disconnected">Service not connected</string>
+</resources>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="setup_title">Shizukuが必要です</string>
+    <string name="setup_description">アプリを非表示にするには\nShizukuのインストールと実行が必要です。</string>
+    <string name="setup_steps_title">セットアップ手順</string>
+    <string name="setup_steps">1  Play StoreからShizukuをダウンロード\n\n2  USBデバッグを有効にする\n\n3  PCから以下のコマンドを実行</string>
+    <string name="setup_alt_method">またはShizukuアプリを開いて\nワイヤレスADBで起動してください。</string>
+    <string name="btn_retry">再試行</string>
+
+    <string name="app_list_title">アプリ非表示</string>
+    <string name="search_hint">アプリを検索\u2026</string>
+    <string name="filter_system">システム</string>
+    <string name="filter_hidden_only">非表示のみ</string>
+    <string name="empty_list">アプリが見つかりません</string>
+
+    <string name="status_hidden">非表示</string>
+    <string name="status_visible">表示中</string>
+
+    <string name="action_show">表示する</string>
+    <string name="action_hide">非表示にする</string>
+    <string name="action_delete">削除</string>
+    <string name="action_cancel">キャンセル</string>
+
+    <string name="delete_title">アプリを削除</string>
+    <string name="delete_confirm_message">%sを削除してもよろしいですか？</string>
+    <string name="delete_note">工場出荷時の状態にリセットすると復元できます。</string>
+
+    <string name="toast_shizuku_denied">Shizukuの権限が拒否されました</string>
+    <string name="toast_hidden">%sを非表示にしました</string>
+    <string name="toast_visible">%sを表示しました</string>
+    <string name="toast_deleted">%sを削除しました</string>
+    <string name="toast_failed">失敗: %s</string>
+    <string name="toast_operation_failed">操作に失敗: %s</string>
+    <string name="toast_error">エラー: %s</string>
+    <string name="toast_service_disconnected">サービス未接続</string>
+</resources>

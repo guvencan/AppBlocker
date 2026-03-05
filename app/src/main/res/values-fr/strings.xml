@@ -1,0 +1,35 @@
+<resources>
+    <string name="setup_title">Shizuku requis</string>
+    <string name="setup_description">Shizuku doit être installé et en cours\nd\'exécution pour masquer les applications.</string>
+    <string name="setup_steps_title">Étapes de configuration</string>
+    <string name="setup_steps">1  Télécharger Shizuku depuis le Play Store\n\n2  Activer le débogage USB\n\n3  Exécuter la commande ci-dessous depuis le PC</string>
+    <string name="setup_alt_method">Ou ouvrir l\'application Shizuku et\ndémarrer via ADB sans fil.</string>
+    <string name="btn_retry">Réessayer</string>
+
+    <string name="app_list_title">Masquer les apps</string>
+    <string name="search_hint">Rechercher une app\u2026</string>
+    <string name="filter_system">Système</string>
+    <string name="filter_hidden_only">Masquées uniquement</string>
+    <string name="empty_list">Aucune application trouvée</string>
+
+    <string name="status_hidden">Masquée</string>
+    <string name="status_visible">Visible</string>
+
+    <string name="action_show">Afficher</string>
+    <string name="action_hide">Masquer</string>
+    <string name="action_delete">Supprimer</string>
+    <string name="action_cancel">Annuler</string>
+
+    <string name="delete_title">Supprimer l\'application</string>
+    <string name="delete_confirm_message">Êtes-vous sûr de vouloir supprimer %s ?</string>
+    <string name="delete_note">Peut être restaurée avec une réinitialisation d\'usine.</string>
+
+    <string name="toast_shizuku_denied">Permission Shizuku refusée</string>
+    <string name="toast_hidden">%s masquée</string>
+    <string name="toast_visible">%s rendue visible</string>
+    <string name="toast_deleted">%s supprimée</string>
+    <string name="toast_failed">Échec : %s</string>
+    <string name="toast_operation_failed">Opération échouée : %s</string>
+    <string name="toast_error">Erreur : %s</string>
+    <string name="toast_service_disconnected">Service non connecté</string>
+</resources>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="setup_title">مطلوب Shizuku</string>
+    <string name="setup_description">يجب تثبيت Shizuku وتشغيله\nلإخفاء التطبيقات.</string>
+    <string name="setup_steps_title">خطوات الإعداد</string>
+    <string name="setup_steps">1  حمّل Shizuku من متجر Play\n\n2  فعّل تصحيح أخطاء USB\n\n3  نفّذ الأمر أدناه من الكمبيوتر</string>
+    <string name="setup_alt_method">أو افتح تطبيق Shizuku\nوابدأ عبر ADB اللاسلكي.</string>
+    <string name="btn_retry">إعادة المحاولة</string>
+
+    <string name="app_list_title">إخفاء التطبيقات</string>
+    <string name="search_hint">بحث عن تطبيق\u2026</string>
+    <string name="filter_system">النظام</string>
+    <string name="filter_hidden_only">المخفية فقط</string>
+    <string name="empty_list">لم يتم العثور على تطبيقات</string>
+
+    <string name="status_hidden">مخفي</string>
+    <string name="status_visible">ظاهر</string>
+
+    <string name="action_show">إظهار</string>
+    <string name="action_hide">إخفاء</string>
+    <string name="action_delete">حذف</string>
+    <string name="action_cancel">إلغاء</string>
+
+    <string name="delete_title">حذف التطبيق</string>
+    <string name="delete_confirm_message">هل أنت متأكد من حذف %s؟</string>
+    <string name="delete_note">يمكن استعادته بإعادة ضبط المصنع.</string>
+
+    <string name="toast_shizuku_denied">تم رفض إذن Shizuku</string>
+    <string name="toast_hidden">تم إخفاء %s</string>
+    <string name="toast_visible">تم إظهار %s</string>
+    <string name="toast_deleted">تم حذف %s</string>
+    <string name="toast_failed">فشل: %s</string>
+    <string name="toast_operation_failed">فشلت العملية: %s</string>
+    <string name="toast_error">خطأ: %s</string>
+    <string name="toast_service_disconnected">الخدمة غير متصلة</string>
+</resources>

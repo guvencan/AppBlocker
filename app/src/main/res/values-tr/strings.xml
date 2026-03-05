@@ -1,0 +1,35 @@
+<resources>
+    <string name="setup_title">Shizuku Gerekli</string>
+    <string name="setup_description">Uygulamalari gizleyebilmek icin\nShizuku kurulu ve calisir olmali.</string>
+    <string name="setup_steps_title">Kurulum Adimlari</string>
+    <string name="setup_steps">1  Play Store\'dan Shizuku indir\n\n2  USB Hata Ayiklama aktif et\n\n3  PC\'den asagidaki komutu calistir</string>
+    <string name="setup_alt_method">Ya da Shizuku uygulamasini ac ve\nKablosuz ADB ile baslat.</string>
+    <string name="btn_retry">Tekrar Dene</string>
+
+    <string name="app_list_title">Uygulama Gizleyici</string>
+    <string name="search_hint">Uygulama ara\u2026</string>
+    <string name="filter_system">Sistem</string>
+    <string name="filter_hidden_only">Sadece gizliler</string>
+    <string name="empty_list">Uygulama bulunamadi</string>
+
+    <string name="status_hidden">Gizli</string>
+    <string name="status_visible">Gorunur</string>
+
+    <string name="action_show">Gorunur Yap</string>
+    <string name="action_hide">Gizle</string>
+    <string name="action_delete">Sil</string>
+    <string name="action_cancel">Iptal</string>
+
+    <string name="delete_title">Uygulamayi Sil</string>
+    <string name="delete_confirm_message">%s uygulamasini silmek istediginize emin misiniz?</string>
+    <string name="delete_note">Fabrika ayarlarina donus ile geri gelebilir.</string>
+
+    <string name="toast_shizuku_denied">Shizuku izni reddedildi</string>
+    <string name="toast_hidden">%s gizlendi</string>
+    <string name="toast_visible">%s gorunur yapildi</string>
+    <string name="toast_deleted">%s silindi</string>
+    <string name="toast_failed">Basarisiz: %s</string>
+    <string name="toast_operation_failed">Islem basarisiz: %s</string>
+    <string name="toast_error">Hata: %s</string>
+    <string name="toast_service_disconnected">Servis bagli degil</string>
+</resources>
