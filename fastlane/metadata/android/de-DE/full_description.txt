@@ -1,0 +1,22 @@
+AppVault ermoglicht es Ihnen, jede App auf Ihrem Android-Gerat auszublenden, zu deaktivieren und zu entfernen — ohne Root.
+
+HAUPTFUNKTIONEN
+
+- Apps ausblenden: Machen Sie jede App in Ihrem App-Drawer unsichtbar
+- Apps entfernen: Unerwunschte Apps fur den aktuellen Benutzer deinstallieren
+- Kein Root erforderlich: Funktioniert uber Shizuku mit ADB-Berechtigungen
+- Jederzeit wiederherstellen: Ausgeblendete Apps konnen mit einem Tipp wieder sichtbar gemacht werden
+- Suche und Filter: Apps schnell nach Name oder Paketnamen finden
+- System-Apps: Vorinstallierte und System-Apps anzeigen und verwalten
+- Modernes dunkles Design: Sauberes, minimales Design
+- Mehrsprachig: Unterstutzt 11 Sprachen
+
+WIE ES FUNKTIONIERT
+
+AppVault verwendet Shizuku, um ADB-Befehle direkt von Ihrem Telefon auszufuhren. Installieren Sie Shizuku aus dem Play Store, starten Sie es einmal uber ADB, und Sie sind bereit.
+
+SICHER UND REVERSIBEL
+
+Alle Anderungen sind ruckgangig zu machen. Ausgeblendete Apps werden nicht geloscht — sie werden nur fur Ihr Benutzerprofil deaktiviert.
+
+HINWEIS: Erfordert die Shizuku-App (kostenlos im Play Store). Einmalige ADB-Einrichtung erforderlich.

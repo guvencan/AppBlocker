@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SIMAppBlocker</string>
+    <string name="app_name">AppVault</string>
 
     <!-- Setup Screen -->
     <string name="setup_title">Shizuku Required</string>

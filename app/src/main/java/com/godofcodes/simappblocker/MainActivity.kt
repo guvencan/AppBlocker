@@ -179,7 +179,7 @@ class MainActivity : AppCompatActivity() {
                     it.packageName.contains(query, ignoreCase = true)
         }
         binding.emptyText.visibility = if (filtered.isEmpty()) View.VISIBLE else View.GONE
-        adapter.submitList(filtered.toList())
+        adapter.submitList(filtered.map { it.copy() })
     }
 
     private fun showActionDialog(item: AppItem) {
@@ -278,8 +278,12 @@ class MainActivity : AppCompatActivity() {
             val result = appManager?.executeCommand(command) ?: getString(R.string.toast_service_disconnected)
 
             if (result.contains("new state") || result.contains("enabled")) {
-                item.isHidden = !item.isHidden
-                val msg = if (item.isHidden) {
+                val newHidden = !item.isHidden
+                val idx = allApps.indexOf(item)
+                if (idx >= 0) {
+                    allApps[idx] = item.copy(isHidden = newHidden)
+                }
+                val msg = if (newHidden) {
                     getString(R.string.toast_hidden, item.label)
                 } else {
                     getString(R.string.toast_visible, item.label)

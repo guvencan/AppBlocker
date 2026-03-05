@@ -1,0 +1,33 @@
+AppVault lets you hide, disable, and remove any app from your Android device — no root required.
+
+Tired of bloatware, carrier apps, or unwanted system apps cluttering your phone? AppVault gives you full control over which apps are visible on your device.
+
+KEY FEATURES
+
+- Hide Apps: Make any app invisible from your app drawer and launcher
+- Remove Apps: Uninstall unwanted apps for the current user
+- No Root Required: Works via Shizuku with ADB-level permissions
+- Restore Anytime: Hidden apps can be made visible again with one tap
+- Search & Filter: Quickly find apps by name or package name
+- System App Support: View and manage system and pre-installed apps
+- Hidden App Filter: See all currently hidden apps at a glance
+- Modern Dark UI: Clean, minimal design with dark theme
+- Multi-language: Supports 11 languages including English, Turkish, German, French, Spanish, Russian, Arabic, Japanese, Chinese, Korean, and Portuguese
+
+HOW IT WORKS
+
+AppVault uses Shizuku to execute ADB-level commands directly from your phone. This means you get powerful app management without rooting your device. Simply install Shizuku from the Play Store, start it once via ADB or Wireless ADB, and you're ready to go.
+
+PERFECT FOR
+
+- Removing carrier bloatware and pre-installed apps
+- Hiding SIM toolkit and other unwanted system apps
+- Cleaning up your app drawer
+- Managing apps on company or family devices
+- Digital minimalism — keep only the apps you actually use
+
+SAFE & REVERSIBLE
+
+All changes are reversible. Hidden apps are not deleted — they're simply disabled for your user profile. You can restore any hidden app with a single tap. Removed apps can be restored with a factory reset.
+
+NOTE: Requires Shizuku app (free on Play Store) to function. One-time ADB setup needed.

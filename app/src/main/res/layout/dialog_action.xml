@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:text="@string/action_delete"
             android:textSize="15sp"
-            android:textColor="@color/hidden_badge_text" />
+            android:textColor="@color/text_primary" />
 
     </LinearLayout>
 

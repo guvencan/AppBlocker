@@ -1,0 +1,33 @@
+AppVault, Android cihazinizdaki herhangi bir uygulamayi gizlemenize, devre disi birakmaniza ve kaldirmaniza olanak tanir — root gerekmez.
+
+Operatorun yukledigi gereksiz uygulamalar, SIM arac seti veya istenmeyen sistem uygulamalari telefonunuzu mu kalabalik yapti? AppVault ile cihazinizdaki tum uygulamalar uzerinde tam kontrol sahibi olun.
+
+TEMEL OZELLIKLER
+
+- Uygulama Gizle: Herhangi bir uygulamayi uygulama cekmecesinden gorunmez yapin
+- Uygulama Sil: Istenmeyen uygulamalari mevcut kullanici icin kaldirin
+- Root Gerektirmez: Shizuku ile ADB seviyesinde izinlerle calisir
+- Istedigin Zaman Geri Al: Gizlenen uygulamalar tek dokunusla tekrar gorunur yapilabilir
+- Arama ve Filtreleme: Uygulamalari isme veya paket adina gore hizlica bulin
+- Sistem Uygulamalari: Onceden yuklu ve sistem uygulamalarini gorun ve yonetin
+- Gizli Uygulama Filtresi: Tum gizlenmis uygulamalari tek bakista gorun
+- Modern Koyu Tema: Temiz, minimal tasarim
+- Cok Dil Destegi: Turkce dahil 11 dil destegi
+
+NASIL CALISIR
+
+AppVault, telefonunuzdan dogrudan ADB seviyesinde komutlar calistirmak icin Shizuku kullanir. Bu sayede cihazinizi rootlamadan guclu uygulama yonetimi elde edersiniz. Play Store'dan Shizuku'yu yukleyin, ADB veya Kablosuz ADB ile bir kez baslatin ve hazirsiniz.
+
+KIMLER ICIN IDEAL
+
+- Operator bloatware ve onceden yuklu uygulamalari kaldirmak isteyenler
+- SIM arac seti ve diger istenmeyen sistem uygulamalarini gizlemek isteyenler
+- Uygulama cekmecesini temizlemek isteyenler
+- Sirket veya aile cihazlarini yonetenler
+- Dijital minimalizm — sadece kullandiginiz uygulamalari tutun
+
+GUVENLI VE GERI ALINABILIR
+
+Tum degisiklikler geri alinabilir. Gizlenen uygulamalar silinmez — sadece kullanici profiliniz icin devre disi birakilir. Gizlenen herhangi bir uygulamayi tek dokunusla geri yukleyebilirsiniz. Kaldirilan uygulamalar fabrika ayarlarina sifirlamayla geri gelebilir.
+
+NOT: Calisabilmesi icin Shizuku uygulamasi (Play Store'da ucretsiz) gereklidir. Tek seferlik ADB kurulumu gerekir.

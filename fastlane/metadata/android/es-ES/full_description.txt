@@ -1,0 +1,22 @@
+AppVault te permite ocultar, desactivar y eliminar cualquier aplicacion de tu dispositivo Android — sin root.
+
+CARACTERISTICAS PRINCIPALES
+
+- Ocultar apps: Haz invisible cualquier app de tu cajon de aplicaciones
+- Eliminar apps: Desinstala apps no deseadas para el usuario actual
+- Sin root: Funciona a traves de Shizuku con permisos ADB
+- Restaurar en cualquier momento: Las apps ocultas vuelven a ser visibles con un solo toque
+- Busqueda y filtro: Encuentra apps rapidamente por nombre o nombre de paquete
+- Apps del sistema: Visualiza y gestiona apps preinstaladas
+- Tema oscuro moderno: Diseno limpio y minimalista
+- Multiidioma: Soporta 11 idiomas
+
+COMO FUNCIONA
+
+AppVault usa Shizuku para ejecutar comandos ADB directamente desde tu telefono. Instala Shizuku desde Play Store, inicialo una vez via ADB y listo.
+
+SEGURO Y REVERSIBLE
+
+Todos los cambios son reversibles. Las apps ocultas no se eliminan — solo se desactivan para tu perfil de usuario.
+
+NOTA: Requiere la app Shizuku (gratuita en Play Store). Configuracion ADB unica necesaria.
