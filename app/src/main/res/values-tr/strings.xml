@@ -2,7 +2,7 @@
     <string name="setup_title">Shizuku Gerekli</string>
     <string name="setup_description">Uygulamalari gizleyebilmek icin\nShizuku kurulu ve calisir olmali.</string>
     <string name="setup_steps_title">Kurulum Adimlari</string>
-    <string name="setup_steps">1  Play Store\'dan Shizuku indir\n\n2  USB Hata Ayiklama aktif et\n\n3  PC\'den asagidaki komutu calistir</string>
+    <string name="setup_steps">1. Shizuku’yu Play Store’dan indirin.\n\n2. Shizuku talimatlarını takip edin ve Kablosuz Hata Ayıklamayı açın.\n\n3. AppVault’a Shizuku’da izin verin.</string>
     <string name="setup_alt_method">Ya da Shizuku uygulamasini ac ve\nKablosuz ADB ile baslat.</string>
     <string name="btn_retry">Tekrar Dene</string>
 

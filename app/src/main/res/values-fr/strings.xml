@@ -2,7 +2,7 @@
     <string name="setup_title">Shizuku requis</string>
     <string name="setup_description">Shizuku doit être installé et en cours\nd\'exécution pour masquer les applications.</string>
     <string name="setup_steps_title">Étapes de configuration</string>
-    <string name="setup_steps">1  Télécharger Shizuku depuis le Play Store\n\n2  Activer le débogage USB\n\n3  Exécuter la commande ci-dessous depuis le PC</string>
+    <string name="setup_steps">1. Téléchargez Shizuku depuis le Play Store.\n\n2. Suivez les instructions dans Shizuku et activez le Débogage sans fil.\n\n3. Accordez la permission à AppVault dans Shizuku.</string>
     <string name="setup_alt_method">Ou ouvrir l\'application Shizuku et\ndémarrer via ADB sans fil.</string>
     <string name="btn_retry">Réessayer</string>
 

@@ -2,7 +2,7 @@
     <string name="setup_title">Shizukuが必要です</string>
     <string name="setup_description">アプリを非表示にするには\nShizukuのインストールと実行が必要です。</string>
     <string name="setup_steps_title">セットアップ手順</string>
-    <string name="setup_steps">1  Play StoreからShizukuをダウンロード\n\n2  USBデバッグを有効にする\n\n3  PCから以下のコマンドを実行</string>
+    <string name="setup_steps">1. Play ストアから Shizuku をダウンロードします。\n\n2. Shizuku の指示に従ってワイヤレスデバッグを有効にします。\n\n3. Shizuku で AppVault に権限を付与します。</string>
     <string name="setup_alt_method">またはShizukuアプリを開いて\nワイヤレスADBで起動してください。</string>
     <string name="btn_retry">再試行</string>
 

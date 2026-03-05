@@ -5,7 +5,7 @@
     <string name="setup_title">Shizuku Required</string>
     <string name="setup_description">Shizuku must be installed and running\nto hide applications.</string>
     <string name="setup_steps_title">Setup Steps</string>
-    <string name="setup_steps">1  Download Shizuku from Play Store\n\n2  Enable USB Debugging\n\n3  Run the command below from PC</string>
+    <string name="setup_steps">1. Download Shizuku from the Play Store.\n\n   2. Follow the instructions in Shizuku and enable Wireless Debugging.\n\n  3. Grant permission to AppVault in Shizuku. </string>
     <string name="setup_adb_command">adb shell sh /sdcard/Android/data/moe.shizuku.privileged.api/start.sh</string>
     <string name="setup_alt_method">Or open Shizuku app and\nstart via Wireless ADB.</string>
     <string name="btn_retry">Retry</string>

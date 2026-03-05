@@ -83,30 +83,11 @@
                         android:lineSpacingExtra="2dp"
                         android:layout_marginBottom="16dp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/setup_adb_command"
-                        android:textSize="11sp"
-                        android:fontFamily="monospace"
-                        android:background="@color/code_background"
-                        android:textColor="@color/code_text"
-                        android:padding="14dp"
-                        android:textIsSelectable="true" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/setup_alt_method"
-                android:textSize="13sp"
-                android:textColor="@color/text_hint"
-                android:gravity="center"
-                android:lineSpacingExtra="2dp"
-                android:layout_marginBottom="28dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnConnect"

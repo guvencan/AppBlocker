@@ -2,7 +2,7 @@
     <string name="setup_title">Shizuku necessário</string>
     <string name="setup_description">O Shizuku deve estar instalado e em execução\npara ocultar aplicativos.</string>
     <string name="setup_steps_title">Passos de configuração</string>
-    <string name="setup_steps">1  Baixe o Shizuku na Play Store\n\n2  Ative a depuração USB\n\n3  Execute o comando abaixo no PC</string>
+    <string name="setup_steps">1. Baixe o Shizuku na Play Store.\n\n2. Siga as instruções no Shizuku e ative a Depuração sem fio.\n\n3. Conceda permissão ao AppVault no Shizuku.</string>
     <string name="setup_alt_method">Ou abra o Shizuku e\ninicie via ADB sem fio.</string>
     <string name="btn_retry">Tentar novamente</string>
 

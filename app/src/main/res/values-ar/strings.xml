@@ -2,7 +2,7 @@
     <string name="setup_title">مطلوب Shizuku</string>
     <string name="setup_description">يجب تثبيت Shizuku وتشغيله\nلإخفاء التطبيقات.</string>
     <string name="setup_steps_title">خطوات الإعداد</string>
-    <string name="setup_steps">1  حمّل Shizuku من متجر Play\n\n2  فعّل تصحيح أخطاء USB\n\n3  نفّذ الأمر أدناه من الكمبيوتر</string>
+    <string name="setup_steps">1. قم بتنزيل Shizuku من متجر Play.\n\n2. اتبع التعليمات في Shizuku وقم بتمكين تصحيح الأخطاء عبر الواي فاي.\n\n3. امنح AppVault الإذن في Shizuku.</string>
     <string name="setup_alt_method">أو افتح تطبيق Shizuku\nوابدأ عبر ADB اللاسلكي.</string>
     <string name="btn_retry">إعادة المحاولة</string>
 

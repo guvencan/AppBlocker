@@ -2,7 +2,7 @@
     <string name="setup_title">Shizuku 필요</string>
     <string name="setup_description">앱을 숨기려면 Shizuku가\n설치되어 실행 중이어야 합니다.</string>
     <string name="setup_steps_title">설정 단계</string>
-    <string name="setup_steps">1  Play 스토어에서 Shizuku 다운로드\n\n2  USB 디버깅 활성화\n\n3  PC에서 아래 명령어 실행</string>
+    <string name="setup_steps">1. Play 스토어에서 Shizuku 를 다운로드합니다.\n\n2. Shizuku 지침을 따라 무선 디버깅을 활성화합니다.\n\n3. Shizuku에서 AppVault 권한을 부여합니다.</string>
     <string name="setup_alt_method">또는 Shizuku 앱을 열고\n무선 ADB로 시작하세요.</string>
     <string name="btn_retry">다시 시도</string>
 
