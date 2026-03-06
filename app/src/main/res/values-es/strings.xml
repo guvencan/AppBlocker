@@ -1,9 +1,10 @@
 <resources>
     <string name="setup_title">Shizuku requerido</string>
-    <string name="setup_description">Shizuku debe estar instalado y en ejecución\npara ocultar aplicaciones.</string>
-    <string name="setup_steps_title">Pasos de configuración</string>
-    <string name="setup_steps">1. Descarga Shizuku desde Google Play.\n\n2. Sigue las instrucciones en Shizuku y habilita la Depuración inalámbrica.\n\n3. Otorga permiso a AppVault en Shizuku.</string>
-    <string name="setup_alt_method">O abrir la aplicación Shizuku e\niniciar mediante ADB inalámbrico.</string>
+    <string name="setup_subtitle">Shizuku debe estar instalado y en ejecución para gestionar apps</string>
+    <string name="setup_step1">Instala Shizuku desde la Play Store</string>
+    <string name="setup_step2">Activa la depuración inalámbrica en Opciones de desarrollador</string>
+    <string name="setup_step3">Abre Shizuku y otorga permiso a AppVault</string>
+    <string name="btn_connect">Conectar a Shizuku</string>
     <string name="btn_retry">Reintentar</string>
 
     <string name="app_list_title">Ocultar apps</string>

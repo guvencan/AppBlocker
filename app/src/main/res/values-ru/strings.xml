@@ -1,9 +1,10 @@
 <resources>
     <string name="setup_title">Требуется Shizuku</string>
-    <string name="setup_description">Shizuku должен быть установлен и запущен\nдля скрытия приложений.</string>
-    <string name="setup_steps_title">Шаги настройки</string>
-    <string name="setup_steps">1. Скачайте Shizuku из Play Store.\n\n2. Следуйте инструкциям в Shizuku и включите Беспроводную отладку.\n\n3. Дайте разрешение AppVault в Shizuku.</string>
-    <string name="setup_alt_method">Или откройте Shizuku и\nзапустите через беспроводной ADB.</string>
+    <string name="setup_subtitle">Shizuku должен быть установлен и запущен для управления приложениями</string>
+    <string name="setup_step1">Установите Shizuku из Play Store</string>
+    <string name="setup_step2">Включите беспроводную отладку в настройках разработчика</string>
+    <string name="setup_step3">Откройте Shizuku и предоставьте разрешение AppVault</string>
+    <string name="btn_connect">Подключиться к Shizuku</string>
     <string name="btn_retry">Повторить</string>
 
     <string name="app_list_title">Скрытие приложений</string>

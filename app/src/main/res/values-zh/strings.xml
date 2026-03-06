@@ -1,9 +1,10 @@
 <resources>
     <string name="setup_title">需要 Shizuku</string>
-    <string name="setup_description">需要安装并运行 Shizuku\n才能隐藏应用。</string>
-    <string name="setup_steps_title">设置步骤</string>
-    <string name="setup_steps">1. 从 Play 商店下载 Shizuku。\n\n2. 按照 Shizuku 中的说明启用无线调试。\n\n3. 在 Shizuku 中授予 AppVault 权限。</string>
-    <string name="setup_alt_method">或打开 Shizuku 应用\n通过无线 ADB 启动。</string>
+    <string name="setup_subtitle">需要安装并运行 Shizuku 才能管理应用</string>
+    <string name="setup_step1">从 Play 商店安装 Shizuku</string>
+    <string name="setup_step2">在开发者选项中启用无线调试</string>
+    <string name="setup_step3">打开 Shizuku 并授予 AppVault 权限</string>
+    <string name="btn_connect">连接到 Shizuku</string>
     <string name="btn_retry">重试</string>
 
     <string name="app_list_title">隐藏应用</string>

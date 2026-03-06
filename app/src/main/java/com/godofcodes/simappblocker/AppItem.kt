@@ -6,5 +6,6 @@ data class AppItem(
     val packageName: String,
     val label: String,
     val icon: Drawable,
-    var isHidden: Boolean
+    val isHidden: Boolean,
+    val isSystem: Boolean
 )

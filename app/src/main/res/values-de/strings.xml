@@ -1,9 +1,10 @@
 <resources>
     <string name="setup_title">Shizuku erforderlich</string>
-    <string name="setup_description">Shizuku muss installiert und aktiv sein,\num Apps auszublenden.</string>
-    <string name="setup_steps_title">Einrichtungsschritte</string>
-    <string name="setup_steps">1. Lade Shizuku aus dem Play Store herunter.\n\n2. Folge den Anweisungen in Shizuku und aktiviere das Drahtlose Debugging.\n\n3. Erteile AppVault in Shizuku die Berechtigung.</string>
-    <string name="setup_alt_method">Oder Shizuku-App öffnen und\nüber Wireless ADB starten.</string>
+    <string name="setup_subtitle">Shizuku muss installiert und gestartet sein, um Apps zu verwalten</string>
+    <string name="setup_step1">Shizuku aus dem Play Store installieren</string>
+    <string name="setup_step2">Drahtloses Debugging in den Entwickleroptionen aktivieren</string>
+    <string name="setup_step3">Shizuku öffnen und AppVault die Berechtigung erteilen</string>
+    <string name="btn_connect">Mit Shizuku verbinden</string>
     <string name="btn_retry">Erneut versuchen</string>
 
     <string name="app_list_title">App-Ausblender</string>
