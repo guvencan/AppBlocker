@@ -1,0 +1,2 @@
+json_key_file(File.expand_path("../bold-syntax-489408-t6-b461291a74e0.json", __dir__))
+package_name("com.godofcodes.simappblocker")

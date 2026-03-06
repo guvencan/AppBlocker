@@ -1,0 +1,50 @@
+default_platform(:android)
+
+platform :android do
+
+  desc "Build release AAB"
+  lane :build do
+    gradle(
+      task: "bundle",
+      build_type: "Release"
+    )
+  end
+
+  desc "Upload metadata only (no APK/AAB)"
+  lane :metadata do
+    supply(
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+
+  desc "Deploy to internal test track"
+  lane :internal do
+    gradle(task: "bundle", build_type: "Release")
+    supply(
+      track: "internal",
+      aab: "app/build/outputs/bundle/release/app-release.aab"
+    )
+  end
+
+  desc "Promote internal to production"
+  lane :promote do
+    supply(
+      track: "internal",
+      track_promote_to: "production"
+    )
+  end
+
+  desc "Deploy to production as draft"
+  lane :production do
+    gradle(task: "bundle", build_type: "Release")
+    supply(
+      track: "production",
+      release_status: "draft",
+      aab: "app/build/outputs/bundle/release/app-release.aab"
+    )
+  end
+
+end
