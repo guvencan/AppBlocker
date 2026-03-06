@@ -1,12 +1,15 @@
 package com.godofcodes.simappblocker
 
 import android.app.Application
+import android.graphics.drawable.Drawable
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.godofcodes.simappblocker.data.AppRepository
 import com.godofcodes.simappblocker.domain.GetInstalledAppsUseCase
 import com.godofcodes.simappblocker.domain.ToggleAppVisibilityUseCase
 import com.godofcodes.simappblocker.domain.UninstallAppUseCase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -14,8 +17,11 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class AppViewModel(app: Application) : AndroidViewModel(app) {
+
+    val iconCache = mutableStateMapOf<String, Drawable>()
 
     private val _uiState = MutableStateFlow(AppUiState())
     val uiState: StateFlow<AppUiState> = _uiState
@@ -29,6 +35,7 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
             var base = if (state.showSystem) state.allApps
             else state.allApps.filter { !it.isSystem }
             if (state.showHiddenOnly) base = base.filter { it.isHidden }
+            if (state.showBloatwareOnly) base = base.filter { it.isBloatware }
             if (state.query.isNotBlank()) {
                 base = base.filter {
                     it.label.contains(state.query, ignoreCase = true) ||
@@ -56,10 +63,24 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     private fun loadApps() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             _uiState.update { it.copy(isLoading = true) }
             val apps = getAppsUseCase?.invoke() ?: emptyList()
             _uiState.update { it.copy(isLoading = false, allApps = apps) }
+            loadIconsAsync(apps)
+        }
+    }
+
+    private fun loadIconsAsync(apps: List<AppItem>) {
+        val pm = getApplication<Application>().packageManager
+        apps.forEach { app ->
+            if (iconCache.containsKey(app.packageName)) return@forEach
+            viewModelScope.launch(Dispatchers.IO) {
+                try {
+                    val drawable = pm.getApplicationIcon(app.packageName)
+                    withContext(Dispatchers.Main) { iconCache[app.packageName] = drawable }
+                } catch (_: Exception) {}
+            }
         }
     }
 
@@ -107,6 +128,17 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
 
     fun setQuery(query: String) = _uiState.update { it.copy(query = query) }
     fun setShowSystem(show: Boolean) = _uiState.update { it.copy(showSystem = show) }
-    fun setShowHiddenOnly(show: Boolean) = _uiState.update { it.copy(showHiddenOnly = show) }
+    fun setShowHiddenOnly(show: Boolean) = _uiState.update {
+        it.copy(
+            showHiddenOnly = show,
+            showSystem = if (show) true else it.showSystem
+        )
+    }
+    fun setShowBloatwareOnly(show: Boolean) = _uiState.update {
+        it.copy(
+            showBloatwareOnly = show,
+            showSystem = if (show) true else it.showSystem
+        )
+    }
     fun clearSnackbar() = _uiState.update { it.copy(snackbarEvent = null) }
 }

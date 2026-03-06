@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import com.godofcodes.simappblocker.AppItem
+import com.godofcodes.simappblocker.Bloatware
 import com.godofcodes.simappblocker.IAppManager
 
 class AppRepository(
@@ -13,8 +14,8 @@ class AppRepository(
 
     fun getInstalledApps(): List<AppItem> {
         val pm = context.packageManager
-        val flags = PackageManager.MATCH_DISABLED_COMPONENTS or
-                PackageManager.MATCH_UNINSTALLED_PACKAGES
+        val flags = PackageManager.MATCH_DISABLED_COMPONENTS
+        //val flags = PackageManager.MATCH_DISABLED_COMPONENTS or PackageManager.MATCH_UNINSTALLED_PACKAGES
         val installed = pm.getInstalledApplications(flags)
         val disabled = getDisabledPackages()
 
@@ -23,14 +24,11 @@ class AppRepository(
             .mapNotNull { info ->
                 try {
                     val label = pm.getApplicationLabel(info).toString()
-                    val icon = try {
-                        pm.getApplicationIcon(info)
-                    } catch (e: Exception) {
-                        pm.defaultActivityIcon
-                    }
                     val isHidden = disabled.contains(info.packageName)
                     val isSystem = (info.flags and ApplicationInfo.FLAG_SYSTEM) != 0
-                    AppItem(info.packageName, label, icon, isHidden, isSystem)
+                    val isBloatware = Bloatware.packages.contains(info.packageName)
+                    val isUninstalled = false //(info.flags and ApplicationInfo.FLAG_INSTALLED) == 0
+                    AppItem(info.packageName, label, null, isHidden, isSystem, isBloatware = isBloatware, isUninstalled = isUninstalled)
                 } catch (e: Exception) {
                     null
                 }

@@ -19,3 +19,14 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Shizuku — AIDL stub ve user service sınıf adları çalışma zamanında
+# ComponentName ile aranır, obfuscate edilirse servis bulunamaz.
+-keep class com.godofcodes.simappblocker.IAppManager { *; }
+-keep class com.godofcodes.simappblocker.IAppManager$Stub { *; }
+-keep class com.godofcodes.simappblocker.IAppManager$Stub$Proxy { *; }
+-keep class com.godofcodes.simappblocker.AppManagerService { *; }
+
+# Shizuku kütüphanesi
+-keep class rikka.shizuku.** { *; }
+-keep interface rikka.shizuku.** { *; }

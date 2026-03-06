@@ -25,6 +25,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -50,9 +51,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.painter.BitmapPainter
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -92,9 +93,12 @@ fun AppListScreen(viewModel: AppViewModel) {
                 query = uiState.query,
                 showSystem = uiState.showSystem,
                 showHiddenOnly = uiState.showHiddenOnly,
+                showBloatwareOnly = uiState.showBloatwareOnly,
                 onQueryChange = viewModel::setQuery,
+                onClearQuery = { viewModel.setQuery("") },
                 onShowSystemToggle = { viewModel.setShowSystem(!uiState.showSystem) },
-                onShowHiddenOnlyToggle = { viewModel.setShowHiddenOnly(!uiState.showHiddenOnly) }
+                onShowHiddenOnlyToggle = { viewModel.setShowHiddenOnly(!uiState.showHiddenOnly) },
+                onShowBloatwareOnlyToggle = { viewModel.setShowBloatwareOnly(!uiState.showBloatwareOnly) }
             )
         }
     ) { padding ->
@@ -106,17 +110,28 @@ fun AppListScreen(viewModel: AppViewModel) {
             when {
                 uiState.isLoading -> ShimmerList()
                 filteredApps.isEmpty() -> EmptyState()
-                else -> AppList(apps = filteredApps, onItemClick = viewModel::selectItem)
+                else -> AppList(
+                    bloatwareApps = filteredApps.filter { it.isBloatware },
+                    regularApps = filteredApps.filter { !it.isBloatware },
+                    iconCache = viewModel.iconCache,
+                    onItemClick = viewModel::selectItem
+                )
             }
         }
     }
 
+    val context = LocalContext.current
     uiState.selectedItem?.let { item ->
         ActionDialog(
             item = item,
+            iconCache = viewModel.iconCache,
             onToggle = { viewModel.toggleVisibility(item) },
             onDelete = { viewModel.requestDelete(item) },
-            onDismiss = viewModel::clearSelection
+            onDismiss = viewModel::clearSelection,
+            onLaunch = {
+                context.packageManager.getLaunchIntentForPackage(item.packageName)
+                    ?.let { context.startActivity(it) }
+            }
         )
     }
 
@@ -134,9 +149,12 @@ private fun AppListTopBar(
     query: String,
     showSystem: Boolean,
     showHiddenOnly: Boolean,
+    showBloatwareOnly: Boolean,
     onQueryChange: (String) -> Unit,
+    onClearQuery: () -> Unit,
     onShowSystemToggle: () -> Unit,
-    onShowHiddenOnlyToggle: () -> Unit
+    onShowHiddenOnlyToggle: () -> Unit,
+    onShowBloatwareOnlyToggle: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -155,6 +173,16 @@ private fun AppListTopBar(
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.onSurfaceVariant
                 )
+            },
+            trailingIcon = {
+                if (query.isNotEmpty()) {
+                    Icon(
+                        painter = painterResource(android.R.drawable.ic_menu_close_clear_cancel),
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.clickable { onClearQuery() }
+                    )
+                }
             },
             singleLine = true,
             shape = RoundedCornerShape(12.dp),
@@ -187,21 +215,73 @@ private fun AppListTopBar(
                     selectedLabelColor = MaterialTheme.colorScheme.onPrimary
                 )
             )
+            FilterChip(
+                selected = showBloatwareOnly,
+                onClick = onShowBloatwareOnlyToggle,
+                label = { Text("Bloatware", fontSize = 12.sp) },
+                colors = FilterChipDefaults.filterChipColors(
+                    selectedContainerColor = Color(0xFFF59E0B),
+                    selectedLabelColor = Color.Black
+                )
+            )
         }
     }
 }
 
 @Composable
-private fun AppList(apps: List<AppItem>, onItemClick: (AppItem) -> Unit) {
+private fun AppList(
+    bloatwareApps: List<AppItem>,
+    regularApps: List<AppItem>,
+    iconCache: MutableMap<String, Drawable>,
+    onItemClick: (AppItem) -> Unit
+) {
     LazyColumn(modifier = Modifier.fillMaxSize()) {
-        items(apps, key = { it.packageName }) { item ->
-            AppListItem(item = item, onClick = { onItemClick(item) })
+        if (bloatwareApps.isNotEmpty()) {
+            item(key = "bloatware_header") {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 10.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Icon(
+                        painter = painterResource(android.R.drawable.ic_dialog_alert),
+                        contentDescription = null,
+                        tint = Color(0xFFF59E0B),
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Text(
+                        text = "Kaldırılması Önerilen (${bloatwareApps.size})",
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = Color(0xFFF59E0B)
+                    )
+                }
+            }
+            items(bloatwareApps, key = { "bloat_${it.packageName}" }) { item ->
+                AppListItem(item = item, iconCache = iconCache, onClick = { onItemClick(item) }, showBloatwareBadge = true)
+            }
+            item(key = "bloatware_divider") {
+                HorizontalDivider(
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    color = SurfaceVariant
+                )
+            }
+        }
+        items(regularApps, key = { it.packageName }) { item ->
+            AppListItem(item = item, iconCache = iconCache, onClick = { onItemClick(item) })
         }
     }
 }
 
 @Composable
-private fun AppListItem(item: AppItem, onClick: () -> Unit) {
+private fun AppListItem(
+    item: AppItem,
+    iconCache: MutableMap<String, Drawable>,
+    onClick: () -> Unit,
+    showBloatwareBadge: Boolean = false
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -209,13 +289,23 @@ private fun AppListItem(item: AppItem, onClick: () -> Unit) {
             .padding(horizontal = 16.dp, vertical = 10.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Image(
-            painter = rememberDrawablePainter(item.icon),
-            contentDescription = item.label,
-            modifier = Modifier
-                .size(48.dp)
-                .clip(RoundedCornerShape(10.dp))
-        )
+        val icon = iconCache[item.packageName]
+        if (icon != null) {
+            Image(
+                painter = rememberDrawablePainter(icon),
+                contentDescription = item.label,
+                modifier = Modifier
+                    .size(48.dp)
+                    .clip(RoundedCornerShape(10.dp))
+            )
+        } else {
+            Box(
+                modifier = Modifier
+                    .size(48.dp)
+                    .clip(RoundedCornerShape(10.dp))
+                    .background(SurfaceVariant)
+            )
+        }
         Spacer(Modifier.width(12.dp))
         Column(modifier = Modifier.weight(1f)) {
             Text(
@@ -235,36 +325,75 @@ private fun AppListItem(item: AppItem, onClick: () -> Unit) {
             )
         }
         Spacer(Modifier.width(8.dp))
-        Text(
-            text = stringResource(if (item.isHidden) R.string.status_hidden else R.string.status_visible),
-            fontSize = 11.sp,
-            fontWeight = FontWeight.SemiBold,
-            color = if (item.isHidden) HiddenBadgeText else VisibleBadgeText,
-            modifier = Modifier
-                .clip(RoundedCornerShape(6.dp))
-                .background(if (item.isHidden) HiddenBadge else VisibleBadge)
-                .padding(horizontal = 8.dp, vertical = 4.dp)
-        )
+        Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            Text(
+                text = stringResource(if (item.isHidden) R.string.status_hidden else R.string.status_visible),
+                fontSize = 11.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = if (item.isHidden) HiddenBadgeText else VisibleBadgeText,
+                modifier = Modifier
+                    .clip(RoundedCornerShape(6.dp))
+                    .background(if (item.isHidden) HiddenBadge else VisibleBadge)
+                    .padding(horizontal = 8.dp, vertical = 4.dp)
+            )
+            if (item.isUninstalled) {
+                Text(
+                    text = "silinmiş",
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.Medium,
+                    color = Color(0xFFEF4444),
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(6.dp))
+                        .background(Color(0xFF3D0000))
+                        .padding(horizontal = 6.dp, vertical = 2.dp)
+                )
+            }
+            if (showBloatwareBadge) {
+                Text(
+                    text = "bloatware",
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.Medium,
+                    color = Color(0xFFF59E0B),
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(6.dp))
+                        .background(Color(0xFF3D2E00))
+                        .padding(horizontal = 6.dp, vertical = 2.dp)
+                )
+            }
+        }
     }
 }
 
 @Composable
 private fun ActionDialog(
     item: AppItem,
+    iconCache: MutableMap<String, Drawable>,
     onToggle: () -> Unit,
     onDelete: () -> Unit,
-    onDismiss: () -> Unit
+    onDismiss: () -> Unit,
+    onLaunch: () -> Unit
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
         containerColor = Surface,
         title = {
             Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
-                Image(
-                    painter = rememberDrawablePainter(item.icon),
-                    contentDescription = null,
-                    modifier = Modifier.size(56.dp).clip(RoundedCornerShape(12.dp))
-                )
+                val dialogIcon = iconCache[item.packageName]
+                if (dialogIcon != null) {
+                    Image(
+                        painter = rememberDrawablePainter(dialogIcon),
+                        contentDescription = null,
+                        modifier = Modifier.size(56.dp).clip(RoundedCornerShape(12.dp)).clickable { onLaunch() }
+                    )
+                } else {
+                    Box(
+                        modifier = Modifier
+                            .size(56.dp)
+                            .clip(RoundedCornerShape(12.dp))
+                            .background(SurfaceVariant)
+                            .clickable { onLaunch() }
+                    )
+                }
                 Spacer(Modifier.height(8.dp))
                 Text(item.label, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onBackground)
                 Text(item.packageName, fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
@@ -398,3 +527,4 @@ private fun rememberDrawablePainter(drawable: Drawable): BitmapPainter {
     }
     return BitmapPainter(bitmap)
 }
+
