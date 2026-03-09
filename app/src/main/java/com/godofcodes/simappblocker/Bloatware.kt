@@ -52,29 +52,57 @@ object Bloatware {
         "com.huawei.livewallpaper.fantasysky",
 
         // ── Xiaomi / MIUI / Redmi / POCO ─────────────────────────────────
-        "com.miui.analytics",
-        "com.miui.msa.global",
-        "com.xiaomi.mipicks",
-        "com.miui.videoplayer",
-        "com.miui.player",
-        "com.mi.globalbrowser",
-        "com.mi.globalnews",
-        "com.xiaomi.joyose",
-        "com.xiaomi.midrop",
-        "com.miui.bugreport",
-        "com.duokan.phone.remoter",
-        "com.miui.personalassistant",
-        "com.miui.systemAdSolution",
-        "com.xiaomi.shareme",
-        "com.xiaomi.scanner",
-        "com.miui.miwallpaper",
-        "com.miui.voiceassist",
-        "com.miui.hybrid",
-        "com.miui.hybrid.accessory",
-        "com.miui.contentextension",
-        "com.xiaomi.payment",
-        "com.mipay.wallet",
-        "com.xiaomi.micreditglobal",
+
+        // Telemetri & Reklam
+        "com.miui.analytics",                      // kullanım istatistikleri
+        "com.miui.msa.global",                     // merkezi reklam ve veri servisi
+        "com.miui.systemAdSolution",               // sistem içi reklam motoru
+        "com.xiaomi.joyose",                       // davranış analitik servisi
+        "com.miui.hybrid",                         // web tabanlı reklam servisi
+        "com.miui.hybrid.accessory",               // reklam servis eklentisi
+        "com.miui.contentextension",               // içerik takip motoru
+        "com.xiaomi.ab",                           // A/B test framework
+
+        // Arka planda internete çıkan servisler
+        "com.miui.weather2",                       // hava durumu (veri satar)
+        "com.miui.daemon",                         // günlük push bildirimleri
+        "com.miui.catcherpatch",                   // uygulama çökme raporları (Xiaomi'ye gider)
+        "com.miui.bugreport",                      // hata raporu servisi
+        // "com.miui.core",                        // MIUI çekirdek telemetri — sistem kararlılığını etkileyebilir
+
+        // Operatör / Reklam ortaklıkları
+        "com.miui.contentcatcher",                 // içerik öneri motoru
+        "com.miui.newhome",                        // kilit ekranı reklamları
+        "com.miui.personalassistant",              // AI öneri motoru
+
+        // Gereksiz ön yüklü uygulamalar
+        "com.xiaomi.mipicks",                      // Mi App Store önerileri
+        "com.miui.videoplayer",                    // Mi Video
+        "com.miui.player",                         // Mi Müzik
+        "com.mi.globalbrowser",                    // Mi Tarayıcı
+        "com.mi.globalnews",                       // Mi Haber
+        "com.xiaomi.midrop",                       // dosya paylaşım uygulaması
+        "com.duokan.phone.remoter",                // Duokan uzaktan kumanda
+        "com.xiaomi.shareme",                      // ShareMe dosya transferi
+        "com.xiaomi.scanner",                      // Mi QR tarayıcı
+        "com.miui.voiceassist",                    // Ses asistanı
+        "com.miui.cleanmaster",                    // Mi Temizleyici
+        "com.xiaomi.payment",                      // Mi Pay
+        "com.mipay.wallet",                        // Mi Cüzdan
+        "com.xiaomi.micreditglobal",               // Mi Kredi
+
+        // Before Logout Mi account
+        // !! Cihaz kilitlenme riski — dikkatli sil !!
+        // "com.xiaomi.account",                   // Mi Hesabı servisi — silme, cihaz kilitlenebilir
+        // "com.miui.cloudservice",                // Mi Cloud senkron servisi — silme, cihaz kilitlenebilir
+        // "com.miui.cloudservice.global",         // Global bulut servisi — silme, cihaz kilitlenebilir
+        // "com.miui.cloudbackup",                 // Bulut yedekleme — silme, cihaz kilitlenebilir
+
+        // !! Duvar kağıdı gider, silme !!
+        // "com.miui.miwallpaper",                 // MIUI duvar kağıdı motoru — silersen duvar kağıdı gider
+        "com.miui.android.fashiongallery",         // Duvar Kağıdı Döngüsü (MIUI)
+        "com.mfashiongallery.emag",                // Duvar Kağıdı Döngüsü (HyperOS)
+
 
         // ── OnePlus / OxygenOS ────────────────────────────────────────────
         "com.oneplus.brickmode",

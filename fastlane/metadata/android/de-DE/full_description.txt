@@ -20,3 +20,18 @@ SICHER UND REVERSIBEL
 Alle Anderungen sind ruckgangig zu machen. Ausgeblendete Apps werden nicht geloscht — sie werden nur fur Ihr Benutzerprofil deaktiviert.
 
 HINWEIS: Erfordert die Shizuku-App (kostenlos im Play Store). Einmalige ADB-Einrichtung erforderlich.
+
+ANDROID DEBLOATEN — VORINSTALLIERTE APPS ENTFERNEN
+
+AppVault ist ein Android-Debloater, mit dem Sie die am häufigsten unerwünschten vorinstallierten Apps ohne PC entfernen können:
+
+- Samsung Bloatware: Bixby, Galaxy Store, Samsung Pay, Samsung Internet, Knox, Game Launcher, AR Zone, Samsung Health
+- Carrier-Apps: SIM-Toolkit, Netzbetreiber-Dienste, vorinstallierte Mobilfunk-Apps
+- Facebook & Meta: Facebook App Manager, Facebook Services, vorinstalliertes Facebook/Instagram
+- Xiaomi / MIUI: Mi Browser, Mi Video, GetApps, Sicherheits-App, Mi AI, Xiaomi-Bloatware
+- Huawei: AppGallery, Petal Search, HiCare, Huawei Health
+- OPPO / Realme / OnePlus: OPPO Market, HeyTap, Theme Store, OPPO Browser
+- Google-Extras: Google One, Play Filme, Google TV, Stadia
+- Sonstiges: LinkedIn (vorinstalliert), Netflix (vorinstalliert), TikTok
+
+AppVault wurde von Universal Android Debloater (UAD) und Canta inspiriert und bringt dieselbe Leistung direkt auf Ihr Telefon — kein PC erforderlich.

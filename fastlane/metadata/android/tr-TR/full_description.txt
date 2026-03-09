@@ -31,3 +31,18 @@ GUVENLI VE GERI ALINABILIR
 Tum degisiklikler geri alinabilir. Gizlenen uygulamalar silinmez — sadece kullanici profiliniz icin devre disi birakilir. Gizlenen herhangi bir uygulamayi tek dokunusla geri yukleyebilirsiniz. Kaldirilan uygulamalar fabrika ayarlarina sifirlamayla geri gelebilir.
 
 NOT: Calisabilmesi icin Shizuku uygulamasi (Play Store'da ucretsiz) gereklidir. Tek seferlik ADB kurulumu gerekir.
+
+ANDROID'INIZDEKI BLOATWARE'I TEMIZLEYIN
+
+AppVault, onceden yuklu gereksiz uygulamalari bilgisayara gerek kalmadan kaldirmanizi saglar:
+
+- Samsung bloatware: Bixby, Galaxy Store, Samsung Pay, Samsung Internet, Knox, Oyun Baslatic, AR Zone, Bixby Vision, Samsung Saglik
+- Operatör uygulamalari: SIM arac seti, operatör servisleri, yerlesik operatör uygulamalari
+- Facebook ve Meta: Facebook App Manager, Facebook Services, onceden yuklu Facebook ve Instagram
+- Xiaomi / MIUI: Mi Browser, Mi Video, GetApps, Guvenlik uygulamasi, Mi AI, Xiaomi bloatware
+- Huawei: AppGallery, Petal Search, HiCare, Huawei Saglik
+- OPPO / Realme / OnePlus: OPPO Market, HeyTap, Tema Magazasi, OPPO Browser
+- Ekstra Google uygulamalari: Google One, Play Filmler, Google TV, Stadia
+- Diger: LinkedIn (onceden yuklu), Netflix (onceden yuklu), TikTok, Snapchat (OEM paketi)
+
+AppVault, en populer Android bloatware temizleme araclari olan Universal Android Debloater (UAD) ve Canta'dan ilham alarak gelistirilmistir. Ayni gucu dogrudan telefonunuzda, bilgisayar gerektirmeden sunar.

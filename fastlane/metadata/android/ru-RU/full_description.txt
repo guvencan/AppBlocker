@@ -20,3 +20,18 @@ AppVault использует Shizuku для выполнения ADB-коман
 Все изменения обратимы. Скрытые приложения не удаляются — они просто отключаются для вашего профиля.
 
 ПРИМЕЧАНИЕ: Требуется приложение Shizuku (бесплатно в Play Store). Необходима однократная настройка ADB.
+
+УДАЛИТЕ BLOATWARE С ANDROID — БЕЗ ПК
+
+AppVault — это Android-дебло́атер, позволяющий удалять или отключать наиболее нежелательные предустановленные приложения:
+
+- Samsung bloatware: Bixby, Galaxy Store, Samsung Pay, Samsung Internet, Knox, Game Launcher, AR Zone, Samsung Health
+- Приложения оператора: SIM Toolkit, сервисы оператора, предустановленные операторские приложения
+- Facebook и Meta: Facebook App Manager, Facebook Services, предустановленные Facebook/Instagram
+- Xiaomi / MIUI: Mi Browser, Mi Video, GetApps, приложение безопасности, Mi AI, bloatware Xiaomi
+- Huawei: AppGallery, Petal Search, HiCare, Huawei Health
+- OPPO / Realme / OnePlus: OPPO Market, HeyTap, Theme Store, OPPO Browser
+- Дополнения Google: Google One, Play Фильмы, Google TV, Stadia
+- Прочее: LinkedIn (предустановлен), Netflix (предустановлен), TikTok
+
+AppVault вдохновлён Universal Android Debloater (UAD) и Canta — самыми популярными инструментами дебло́атинга Android — и приносит ту же мощь прямо на ваш телефон.

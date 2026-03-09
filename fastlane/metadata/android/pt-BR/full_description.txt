@@ -20,3 +20,18 @@ SEGURO E REVERSIVEL
 Todas as alteracoes sao reversiveis. Apps ocultos nao sao excluidos — apenas desativados para o seu perfil de usuario.
 
 NOTA: Requer o app Shizuku (gratuito na Play Store). Configuracao ADB unica necessaria.
+
+REMOVA BLOATWARE DO ANDROID — SEM PC
+
+AppVault e um debloater Android que permite remover ou desativar os apps pre-instalados mais indesejados sem precisar de PC:
+
+- Bloatware Samsung: Bixby, Galaxy Store, Samsung Pay, Samsung Internet, Knox, Game Launcher, AR Zone, Samsung Health
+- Apps de operadora: SIM Toolkit, servicos de operadora, apps pre-instalados da operadora
+- Facebook e Meta: Facebook App Manager, Facebook Services, Facebook/Instagram pre-instalados
+- Xiaomi / MIUI: Mi Browser, Mi Video, GetApps, app de Seguranca, Mi AI, bloatware Xiaomi
+- Huawei: AppGallery, Petal Search, HiCare, Huawei Health
+- OPPO / Realme / OnePlus: OPPO Market, HeyTap, Theme Store, OPPO Browser
+- Extras do Google: Google One, Play Filmes, Google TV, Stadia
+- Outros: LinkedIn (pre-instalado), Netflix (pre-instalado), TikTok
+
+AppVault e inspirado em Universal Android Debloater (UAD) e Canta — as ferramentas de debloat Android mais populares — e traz o mesmo poder diretamente para o seu celular sem precisar de PC.

@@ -20,3 +20,18 @@ AppVault使用Shizuku直接从手机执行ADB命令。从Play商店安装Shizuku
 所有更改均可撤销。隐藏的应用不会被删除 — 只是为您的用户配置文件禁用。
 
 注意：需要Shizuku应用（Play商店免费）。需要一次性ADB设置。
+
+清除Android预装垃圾软件 — 无需电脑
+
+AppVault是一款Android清理工具，无需电脑即可删除或禁用最常见的不需要预装应用：
+
+- 三星预装应用：Bixby、Galaxy Store、Samsung Pay、Samsung Internet、Knox、游戏启动器、AR Zone、三星健康
+- 运营商应用：SIM工具箱、运营商服务、预装运营商应用
+- Facebook和Meta：Facebook App Manager、Facebook Services、预装Facebook/Instagram
+- 小米 / MIUI：Mi浏览器、Mi视频、GetApps、安全应用、Mi AI、小米预装软件
+- 华为：AppGallery、花瓣搜索、HiCare、华为健康
+- OPPO / Realme / OnePlus：OPPO软件商店、HeyTap、主题商店、OPPO浏览器
+- 谷歌额外应用：Google One、Play影视、Google TV、Stadia
+- 其他：LinkedIn（预装）、Netflix（预装）、TikTok
+
+AppVault灵感来源于最受欢迎的Android清理工具Universal Android Debloater (UAD)和Canta，将同样的强大功能直接带到您的手机上，无需PC。

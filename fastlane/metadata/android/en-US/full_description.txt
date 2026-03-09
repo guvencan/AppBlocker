@@ -31,3 +31,18 @@ SAFE & REVERSIBLE
 All changes are reversible. Hidden apps are not deleted — they're simply disabled for your user profile. You can restore any hidden app with a single tap. Removed apps can be restored with a factory reset.
 
 NOTE: Requires Shizuku app (free on Play Store) to function. One-time ADB setup needed.
+
+DEBLOAT YOUR ANDROID — REMOVE PRE-INSTALLED JUNK
+
+AppVault is an Android debloater that lets you remove or disable the most commonly unwanted pre-installed apps without a PC:
+
+- Samsung bloatware: Bixby, Galaxy Store, Samsung Pay, Samsung Internet, Knox Vault, Game Launcher, AR Zone, Bixby Vision, Samsung Health
+- Carrier apps: SIM Toolkit, carrier services, operator bloatware (T-Mobile, AT&T, Verizon, Sprint apps)
+- Facebook & Meta: Facebook App Manager, Facebook Services, pre-installed Facebook, Instagram
+- Xiaomi / MIUI: Mi Browser, Mi Video, GetApps, Security app, Mi AI, Xiaomi bloatware
+- Huawei: AppGallery, Petal Search, HiCare, Huawei Health, Huawei bloatware
+- OPPO / Realme / OnePlus: OPPO Market, HeyTap, Theme Store, OPPO Browser
+- Google extras: Google One, Play Movies, Google TV, Google Play Books, Stadia
+- Others: LinkedIn (pre-installed), Netflix (pre-installed), TikTok, Snapchat (OEM bundle)
+
+AppVault is inspired by Universal Android Debloater (UAD) and Canta — the most popular Android debloating tools — and brings the same power directly to your phone without needing a PC or ADB from a computer.
