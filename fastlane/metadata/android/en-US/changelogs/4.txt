@@ -1,0 +1,2 @@
+- Expanded Xiaomi / MIUI bloatware list: added analytics, ad services, lock screen ads, wallpaper carousel and more
+- Improved app discoverability and descriptions

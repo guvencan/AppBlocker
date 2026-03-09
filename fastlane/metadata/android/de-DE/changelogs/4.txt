@@ -1,0 +1,2 @@
+- Erweiterte Xiaomi / MIUI Bloatware-Liste: Analysedienste, Werbedienste, Sperrbildschirm-Werbung, Hintergrundkarussell und mehr hinzugefügt
+- App-Beschreibungen verbessert

@@ -28,7 +28,7 @@ platform :android do
       track: "internal",
       aab: "app/build/outputs/bundle/release/app-release.aab",
       skip_upload_apk: true,
-      version_code: 3
+      version_code: 4
     )
   end
 
@@ -37,7 +37,7 @@ platform :android do
     supply(
       track: "internal",
       track_promote_to: "production",
-      version_code: 3
+      version_code: 4
     )
   end
 
@@ -46,9 +46,9 @@ platform :android do
     gradle(task: "bundle", build_type: "Release")
     supply(
       track: "production",
-      release_status: "draft",
+      release_status: "completed",
       aab: "app/build/outputs/bundle/release/app-release.aab",
-      version_code: 3
+      version_code: 4
     )
   end
 

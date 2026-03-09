@@ -5,7 +5,11 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(./gradlew compileDebugKotlin:*)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "Bash(fastlane metadata:*)",
+      "Bash(bundle exec:*)",
+      "Bash(bundle:*)",
+      "Bash(fastlane:*)"
     ]
   }
 }

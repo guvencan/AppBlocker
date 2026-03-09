@@ -1,0 +1,2 @@
+- Xiaomi / MIUI bloatware listesi genişletildi: analitik, reklam servisleri, kilit ekranı reklamları, duvar kağıdı döngüsü ve daha fazlası eklendi
+- Uygulama açıklamaları iyileştirildi
