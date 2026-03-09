@@ -48,6 +48,7 @@ platform :android do
       track: "production",
       release_status: "completed",
       aab: "app/build/outputs/bundle/release/app-release.aab",
+      skip_upload_apk: true,
       version_code: 4
     )
   end
