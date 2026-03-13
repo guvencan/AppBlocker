@@ -1,0 +1,6 @@
+- La sección de bloatware ahora siempre se muestra en la parte superior de la lista
+- Las aplicaciones eliminadas se listan y pueden restaurarse con un solo toque
+- Detalles de aplicaciones visibles sin conexión Shizuku
+- Nuevo filtro «Solo eliminadas» para aplicaciones desinstaladas
+- Indicador de estado de Shizuku animado en la barra de herramientas
+- Correcciones de errores y mejoras de rendimiento

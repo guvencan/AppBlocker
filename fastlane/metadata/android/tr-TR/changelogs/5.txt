@@ -1,0 +1,6 @@
+- Bloatware bölümü artık listenin her zaman en üstünde gösteriliyor
+- Kaldırılan uygulamalar listede gösteriliyor ve tek dokunuşla geri yüklenebiliyor
+- Shizuku bağlantısı olmadan da uygulama detayları görüntülenebiliyor
+- Kaldırılmış uygulamaları görmek için yeni "Yalnızca kaldırılanlar" filtresi
+- Araç çubuğunda animasyonlu Shizuku durum göstergesi
+- Hata düzeltmeleri ve performans iyileştirmeleri

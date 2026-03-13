@@ -1,0 +1,6 @@
+- Bloatware section now always shown at the top of the list
+- Removed apps are now listed and can be restored with one tap
+- App details visible without Shizuku connection
+- New "Removed only" filter to see uninstalled apps
+- Shizuku status indicator with animation in the toolbar
+- Bug fixes and performance improvements

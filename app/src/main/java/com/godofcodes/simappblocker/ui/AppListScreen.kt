@@ -52,6 +52,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
@@ -75,6 +76,7 @@ import com.godofcodes.simappblocker.ui.theme.HiddenBadgeText
 import com.godofcodes.simappblocker.ui.theme.Surface
 import com.godofcodes.simappblocker.ui.theme.SurfaceVariant
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.yield
 
 @Composable
 fun AppListScreen(viewModel: AppViewModel, onNavigateToSetup: () -> Unit) {
@@ -83,16 +85,18 @@ fun AppListScreen(viewModel: AppViewModel, onNavigateToSetup: () -> Unit) {
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
     val listState = rememberLazyListState()
-    val lastScrolledEvent = remember { androidx.compose.runtime.mutableLongStateOf(0L) }
+    val hadBloatware = remember { androidx.compose.runtime.mutableStateOf(false) }
 
-    LaunchedEffect(uiState.scrollToTopEvent, filteredApps) {
-        if (uiState.scrollToTopEvent > 0
-            && uiState.scrollToTopEvent != lastScrolledEvent.longValue
-            && filteredApps.isNotEmpty()
-        ) {
-            lastScrolledEvent.longValue = uiState.scrollToTopEvent
-            listState.scrollToItem(0)
-        }
+    // Scroll to top on initial load (no Shizuku)
+    LaunchedEffect(uiState.scrollToTopEvent) {
+        if (uiState.scrollToTopEvent > 0) listState.scrollToItem(0)
+    }
+
+    // Scroll to top when bloatware section appears for the first time
+    LaunchedEffect(filteredApps) {
+        val hasBloatware = filteredApps.any { it.isBloatware }
+        if (hasBloatware && !hadBloatware.value) listState.scrollToItem(0)
+        hadBloatware.value = hasBloatware
     }
 
     LaunchedEffect(uiState.snackbarEvent) {
@@ -144,39 +148,40 @@ fun AppListScreen(viewModel: AppViewModel, onNavigateToSetup: () -> Unit) {
                     apps = filteredApps,
                     iconCache = viewModel.iconCache,
                     listState = listState,
-                    onItemClick = { item ->
-                        if (uiState.isServiceConnected) viewModel.selectItem(item)
-                        else onNavigateToSetup()
-                    }
+                    onItemClick = { item -> viewModel.selectItem(item) }
                 )
             }
         }
     }
 
     val context = LocalContext.current
-    if (uiState.isServiceConnected) {
-        uiState.selectedItem?.let { item ->
-            ActionDialog(
-                item = item,
-                iconCache = viewModel.iconCache,
-                // onToggle = { viewModel.toggleVisibility(item) },
-                onDelete = { viewModel.requestDelete(item) },
-                onRecover = { viewModel.recover(item) },
-                onDismiss = viewModel::clearSelection,
-                onLaunch = {
-                    context.packageManager.getLaunchIntentForPackage(item.packageName)
-                        ?.let { context.startActivity(it) }
-                }
-            )
-        }
+    uiState.selectedItem?.let { item ->
+        ActionDialog(
+            item = item,
+            iconCache = viewModel.iconCache,
+            // onToggle = { viewModel.toggleVisibility(item) },
+            onDelete = {
+                if (uiState.isServiceConnected) viewModel.requestDelete(item)
+                else scope.launch { viewModel.clearSelection(); yield(); onNavigateToSetup() }
+            },
+            onRecover = {
+                if (uiState.isServiceConnected) viewModel.recover(item)
+                else scope.launch { viewModel.clearSelection(); yield(); onNavigateToSetup() }
+            },
+            onDismiss = viewModel::clearSelection,
+            onLaunch = {
+                context.packageManager.getLaunchIntentForPackage(item.packageName)
+                    ?.let { context.startActivity(it) }
+            }
+        )
+    }
 
-        uiState.confirmDeleteItem?.let { item ->
-            ConfirmDeleteDialog(
-                item = item,
-                onConfirm = { viewModel.uninstall(item) },
-                onDismiss = viewModel::clearConfirmDelete
-            )
-        }
+    uiState.confirmDeleteItem?.let { item ->
+        ConfirmDeleteDialog(
+            item = item,
+            onConfirm = { viewModel.uninstall(item) },
+            onDismiss = viewModel::clearConfirmDelete
+        )
     }
 }
 
@@ -313,7 +318,7 @@ private fun ShizukuStatusIcon(isConnected: Boolean, onClick: () -> Unit) {
     Box(
         modifier = Modifier
             .size(44.dp)
-            .graphicsLayer { rotationZ = rotation }
+            .graphicsLayer { rotationZ = rotation; transformOrigin = TransformOrigin.Center }
             .clip(CircleShape)
             .background(bgColor)
             .clickable(onClick = onClick),
@@ -341,7 +346,7 @@ private fun AppList(
 
     LazyColumn(state = listState, modifier = Modifier.fillMaxSize()) {
         if (bloatware.isNotEmpty()) {
-            item(key = "bloatware_header") {
+            item(key = "bloatware_header")  {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()

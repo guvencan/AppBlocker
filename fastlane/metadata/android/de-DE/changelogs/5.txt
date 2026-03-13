@@ -1,0 +1,6 @@
+- Bloatware-Bereich wird jetzt immer oben in der Liste angezeigt
+- Entfernte Apps werden aufgelistet und können mit einem Tippen wiederhergestellt werden
+- App-Details sind auch ohne Shizuku-Verbindung sichtbar
+- Neuer Filter „Nur entfernte Apps" für deinstallierte Anwendungen
+- Shizuku-Statusanzeige mit Animation in der Symbolleiste
+- Fehlerbehebungen und Leistungsverbesserungen

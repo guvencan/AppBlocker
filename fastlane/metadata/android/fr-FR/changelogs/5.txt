@@ -1,0 +1,6 @@
+- La section bloatware est maintenant toujours affichée en haut de la liste
+- Les applications supprimées sont listées et peuvent être restaurées en un seul tap
+- Détails des applications visibles sans connexion Shizuku
+- Nouveau filtre « Supprimées uniquement » pour les applications désinstallées
+- Indicateur de statut Shizuku animé dans la barre d'outils
+- Corrections de bugs et améliorations des performances

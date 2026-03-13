@@ -96,7 +96,7 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
                 ) ?: new
             }
             val brandNew = newApps.filter { it.packageName !in current }
-            _uiState.update { it.copy(allApps = merged, scrollToTopEvent = System.currentTimeMillis()) }
+            _uiState.update { it.copy(allApps = merged) }
             loadIconsAsync(brandNew)
         }
     }
