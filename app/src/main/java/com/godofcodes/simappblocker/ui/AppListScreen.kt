@@ -83,9 +83,14 @@ fun AppListScreen(viewModel: AppViewModel, onNavigateToSetup: () -> Unit) {
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
     val listState = rememberLazyListState()
+    val lastScrolledEvent = remember { androidx.compose.runtime.mutableLongStateOf(0L) }
 
-    LaunchedEffect(uiState.scrollToTopEvent) {
-        if (uiState.scrollToTopEvent > 0) {
+    LaunchedEffect(uiState.scrollToTopEvent, filteredApps) {
+        if (uiState.scrollToTopEvent > 0
+            && uiState.scrollToTopEvent != lastScrolledEvent.longValue
+            && filteredApps.isNotEmpty()
+        ) {
+            lastScrolledEvent.longValue = uiState.scrollToTopEvent
             listState.scrollToItem(0)
         }
     }
