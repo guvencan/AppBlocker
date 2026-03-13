@@ -1,7 +1,7 @@
 default_platform(:android)
 
 def get_version_code
-  File.read("app/build.gradle.kts").match(/versionCode\s*=\s*(\d+)/)[1].to_i
+  File.read("../app/build.gradle.kts").match(/versionCode\s*=\s*(\d+)/)[1].to_i
 end
 
 platform :android do
