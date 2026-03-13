@@ -4,22 +4,27 @@
     <string name="setup_step1">ثبّت Shizuku من متجر Play</string>
     <string name="setup_step2">فعّل تصحيح الأخطاء اللاسلكي في خيارات المطور</string>
     <string name="setup_step3">افتح Shizuku وامنح إذنًا لـ AppVault</string>
-    <string name="btn_connect">الاتصال بـ Shizuku</string>
+    <string name="btn_open_shizuku">فتح Shizuku</string>
+    <string name="btn_install_shizuku">تثبيت Shizuku</string>
+    <string name="btn_connect">تم الإعداد؟ اتصل</string>
     <string name="btn_retry">إعادة المحاولة</string>
 
     <string name="app_list_title">إخفاء التطبيقات</string>
     <string name="search_hint">بحث عن تطبيق\u2026</string>
     <string name="filter_system">النظام</string>
     <string name="filter_hidden_only">المخفية فقط</string>
+    <string name="filter_removed_only">المحذوفة فقط</string>
     <string name="empty_list">لم يتم العثور على تطبيقات</string>
 
     <string name="status_hidden">مخفي</string>
-    <string name="status_visible">ظاهر</string>
+    <string name="badge_removed">محذوف</string>
+    <string name="section_bloatware_header">مستحسن إزالته (%d)</string>
 
     <string name="action_show">إظهار</string>
     <string name="action_hide">إخفاء</string>
     <string name="action_delete">حذف</string>
     <string name="action_cancel">إلغاء</string>
+    <string name="action_recover">استعادة</string>
 
     <string name="delete_title">حذف التطبيق</string>
     <string name="delete_confirm_message">هل أنت متأكد من حذف %s؟</string>
@@ -33,4 +38,8 @@
     <string name="toast_operation_failed">فشلت العملية: %s</string>
     <string name="toast_error">خطأ: %s</string>
     <string name="toast_service_disconnected">الخدمة غير متصلة</string>
+    <string name="toast_recovered">تمت استعادة %s</string>
+
+    <string name="shizuku_active">Shizuku نشط — كل شيء على ما يرام</string>
+    <string name="shizuku_inactive_hint">Shizuku غير متصل. انقر للإعداد.</string>
 </resources>

@@ -4,22 +4,27 @@
     <string name="setup_step1">从 Play 商店安装 Shizuku</string>
     <string name="setup_step2">在开发者选项中启用无线调试</string>
     <string name="setup_step3">打开 Shizuku 并授予 AppVault 权限</string>
-    <string name="btn_connect">连接到 Shizuku</string>
+    <string name="btn_open_shizuku">打开 Shizuku</string>
+    <string name="btn_install_shizuku">安装 Shizuku</string>
+    <string name="btn_connect">已设置？连接</string>
     <string name="btn_retry">重试</string>
 
     <string name="app_list_title">隐藏应用</string>
     <string name="search_hint">搜索应用\u2026</string>
     <string name="filter_system">系统</string>
     <string name="filter_hidden_only">仅隐藏的</string>
+    <string name="filter_removed_only">仅已卸载</string>
     <string name="empty_list">未找到应用</string>
 
     <string name="status_hidden">已隐藏</string>
-    <string name="status_visible">可见</string>
+    <string name="badge_removed">已卸载</string>
+    <string name="section_bloatware_header">建议删除 (%d)</string>
 
     <string name="action_show">显示</string>
     <string name="action_hide">隐藏</string>
     <string name="action_delete">删除</string>
     <string name="action_cancel">取消</string>
+    <string name="action_recover">恢复</string>
 
     <string name="delete_title">删除应用</string>
     <string name="delete_confirm_message">确定要删除 %s 吗？</string>
@@ -33,4 +38,8 @@
     <string name="toast_operation_failed">操作失败：%s</string>
     <string name="toast_error">错误：%s</string>
     <string name="toast_service_disconnected">服务未连接</string>
+    <string name="toast_recovered">%s 已恢复</string>
+
+    <string name="shizuku_active">Shizuku 已激活 — 一切正常</string>
+    <string name="shizuku_inactive_hint">Shizuku 未连接。点击以设置。</string>
 </resources>

@@ -11,7 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.godofcodes.simappblocker.AppViewModel
 
@@ -24,33 +23,31 @@ internal object Routes {
 fun AppNavigation(viewModel: AppViewModel, onConnectClick: () -> Unit) {
     val navController = rememberNavController()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-    val currentRoute by navController.currentBackStackEntryAsState()
 
     LaunchedEffect(uiState.isServiceConnected) {
         if (uiState.isServiceConnected) {
             navController.navigate(Routes.APP_LIST) {
-                popUpTo(Routes.SETUP) { inclusive = true }
-            }
-        } else if (currentRoute?.destination?.route != Routes.SETUP) {
-            navController.navigate(Routes.SETUP) {
-                popUpTo(0) { inclusive = true }
+                popUpTo(Routes.APP_LIST) { inclusive = true }
             }
         }
     }
 
     NavHost(
         navController = navController,
-        startDestination = Routes.SETUP,
+        startDestination = Routes.APP_LIST,
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .safeDrawingPadding()
     ) {
+        composable(Routes.APP_LIST) {
+            AppListScreen(
+                viewModel = viewModel,
+                onNavigateToSetup = { navController.navigate(Routes.SETUP) }
+            )
+        }
         composable(Routes.SETUP) {
             SetupScreen(onConnectClick = onConnectClick)
-        }
-        composable(Routes.APP_LIST) {
-            AppListScreen(viewModel = viewModel)
         }
     }
 }

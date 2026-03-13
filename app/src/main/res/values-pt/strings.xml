@@ -4,22 +4,27 @@
     <string name="setup_step1">Instale o Shizuku pela Play Store</string>
     <string name="setup_step2">Ative a depuração sem fio nas Opções do desenvolvedor</string>
     <string name="setup_step3">Abra o Shizuku e conceda permissão ao AppVault</string>
-    <string name="btn_connect">Conectar ao Shizuku</string>
+    <string name="btn_open_shizuku">Abrir Shizuku</string>
+    <string name="btn_install_shizuku">Instalar Shizuku</string>
+    <string name="btn_connect">Já configurado? Conectar</string>
     <string name="btn_retry">Tentar novamente</string>
 
     <string name="app_list_title">Ocultar apps</string>
     <string name="search_hint">Pesquisar app\u2026</string>
     <string name="filter_system">Sistema</string>
     <string name="filter_hidden_only">Apenas ocultos</string>
+    <string name="filter_removed_only">Apenas removidos</string>
     <string name="empty_list">Nenhum aplicativo encontrado</string>
 
     <string name="status_hidden">Oculto</string>
-    <string name="status_visible">Visível</string>
+    <string name="badge_removed">removido</string>
+    <string name="section_bloatware_header">Recomendado remover (%d)</string>
 
     <string name="action_show">Mostrar</string>
     <string name="action_hide">Ocultar</string>
     <string name="action_delete">Excluir</string>
     <string name="action_cancel">Cancelar</string>
+    <string name="action_recover">Recuperar</string>
 
     <string name="delete_title">Excluir aplicativo</string>
     <string name="delete_confirm_message">Tem certeza de que deseja excluir %s?</string>
@@ -33,4 +38,8 @@
     <string name="toast_operation_failed">Operação falhou: %s</string>
     <string name="toast_error">Erro: %s</string>
     <string name="toast_service_disconnected">Serviço não conectado</string>
+    <string name="toast_recovered">%s recuperado</string>
+
+    <string name="shizuku_active">Shizuku está ativo — tudo certo</string>
+    <string name="shizuku_inactive_hint">Shizuku não conectado. Toque para configurar.</string>
 </resources>

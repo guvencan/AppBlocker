@@ -4,22 +4,27 @@
     <string name="setup_step1">Play 스토어에서 Shizuku 설치</string>
     <string name="setup_step2">개발자 옵션에서 무선 디버깅 활성화</string>
     <string name="setup_step3">Shizuku를 열고 AppVault에 권한 부여</string>
-    <string name="btn_connect">Shizuku에 연결</string>
+    <string name="btn_open_shizuku">Shizuku 열기</string>
+    <string name="btn_install_shizuku">Shizuku 설치</string>
+    <string name="btn_connect">이미 설정됨? 연결</string>
     <string name="btn_retry">다시 시도</string>
 
     <string name="app_list_title">앱 숨기기</string>
     <string name="search_hint">앱 검색\u2026</string>
     <string name="filter_system">시스템</string>
     <string name="filter_hidden_only">숨겨진 앱만</string>
+    <string name="filter_removed_only">삭제된 앱만</string>
     <string name="empty_list">앱을 찾을 수 없습니다</string>
 
     <string name="status_hidden">숨김</string>
-    <string name="status_visible">표시됨</string>
+    <string name="badge_removed">삭제됨</string>
+    <string name="section_bloatware_header">제거 권장 (%d)</string>
 
     <string name="action_show">표시</string>
     <string name="action_hide">숨기기</string>
     <string name="action_delete">삭제</string>
     <string name="action_cancel">취소</string>
+    <string name="action_recover">복구</string>
 
     <string name="delete_title">앱 삭제</string>
     <string name="delete_confirm_message">%s을(를) 삭제하시겠습니까?</string>
@@ -33,4 +38,8 @@
     <string name="toast_operation_failed">작업 실패: %s</string>
     <string name="toast_error">오류: %s</string>
     <string name="toast_service_disconnected">서비스 연결 안 됨</string>
+    <string name="toast_recovered">%s 복구됨</string>
+
+    <string name="shizuku_active">Shizuku 활성화됨 — 모든 게 정상입니다</string>
+    <string name="shizuku_inactive_hint">Shizuku 연결 안됨. 탭하여 설정하세요.</string>
 </resources>

@@ -9,8 +9,10 @@ data class AppUiState(
     val query: String = "",
     val showSystem: Boolean = false,
     val showHiddenOnly: Boolean = false,
+    val showRemovedOnly: Boolean = false,
     val showBloatwareOnly: Boolean = false,
     val selectedItem: AppItem? = null,
     val confirmDeleteItem: AppItem? = null,
-    val snackbarEvent: SnackbarEvent? = null
+    val snackbarEvent: SnackbarEvent? = null,
+    val scrollToTopEvent: Long = 0
 )

@@ -4,22 +4,27 @@
     <string name="setup_step1">Installer Shizuku depuis le Play Store</string>
     <string name="setup_step2">Activer le débogage sans fil dans les options développeur</string>
     <string name="setup_step3">Ouvrir Shizuku et accorder la permission à AppVault</string>
-    <string name="btn_connect">Se connecter à Shizuku</string>
+    <string name="btn_open_shizuku">Ouvrir Shizuku</string>
+    <string name="btn_install_shizuku">Installer Shizuku</string>
+    <string name="btn_connect">Déjà configuré ? Se connecter</string>
     <string name="btn_retry">Réessayer</string>
 
     <string name="app_list_title">Masquer les apps</string>
     <string name="search_hint">Rechercher une app\u2026</string>
     <string name="filter_system">Système</string>
     <string name="filter_hidden_only">Masquées uniquement</string>
+    <string name="filter_removed_only">Supprimées uniquement</string>
     <string name="empty_list">Aucune application trouvée</string>
 
     <string name="status_hidden">Masquée</string>
-    <string name="status_visible">Visible</string>
+    <string name="badge_removed">supprimée</string>
+    <string name="section_bloatware_header">Recommandé pour suppression (%d)</string>
 
     <string name="action_show">Afficher</string>
     <string name="action_hide">Masquer</string>
     <string name="action_delete">Supprimer</string>
     <string name="action_cancel">Annuler</string>
+    <string name="action_recover">Récupérer</string>
 
     <string name="delete_title">Supprimer l\'application</string>
     <string name="delete_confirm_message">Êtes-vous sûr de vouloir supprimer %s ?</string>
@@ -33,4 +38,8 @@
     <string name="toast_operation_failed">Opération échouée : %s</string>
     <string name="toast_error">Erreur : %s</string>
     <string name="toast_service_disconnected">Service non connecté</string>
+    <string name="toast_recovered">%s récupérée</string>
+
+    <string name="shizuku_active">Shizuku est actif — tout va bien</string>
+    <string name="shizuku_inactive_hint">Shizuku non connecté. Appuyer pour configurer.</string>
 </resources>

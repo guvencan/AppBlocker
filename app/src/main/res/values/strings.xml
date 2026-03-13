@@ -17,17 +17,21 @@
     <string name="search_hint">Search app…</string>
     <string name="filter_system">System</string>
     <string name="filter_hidden_only">Hidden only</string>
+    <string name="filter_removed_only">Removed only</string>
     <string name="empty_list">No apps found</string>
 
-    <!-- Status Badges -->
+    <!-- Badges -->
     <string name="status_hidden">Hidden</string>
-    <string name="status_visible">Visible</string>
+    <string name="badge_removed">removed</string>
+    <string name="badge_bloatware" translatable="false">bloatware</string>
+    <string name="section_bloatware_header">Recommended for Removal (%d)</string>
 
     <!-- Action Dialog -->
     <string name="action_show">Show</string>
     <string name="action_hide">Hide</string>
     <string name="action_delete">Delete</string>
     <string name="action_cancel">Cancel</string>
+    <string name="action_recover">Recover</string>
 
     <!-- Confirm Delete Dialog -->
     <string name="delete_title">Delete App</string>
@@ -43,4 +47,9 @@
     <string name="toast_operation_failed">Operation failed: %s</string>
     <string name="toast_error">Error: %s</string>
     <string name="toast_service_disconnected">Service not connected</string>
+    <string name="toast_recovered">%s recovered</string>
+
+    <!-- Shizuku Status Icon -->
+    <string name="shizuku_active">Shizuku is active — everything is OK</string>
+    <string name="shizuku_inactive_hint">Shizuku not connected. Tap to set up.</string>
 </resources>

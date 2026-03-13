@@ -4,22 +4,27 @@
     <string name="setup_step1">Play StoreからShizukuをインストール</string>
     <string name="setup_step2">開発者オプションでワイヤレスデバッグを有効にする</string>
     <string name="setup_step3">Shizukuを開きAppVaultに権限を付与する</string>
-    <string name="btn_connect">Shizukuに接続</string>
+    <string name="btn_open_shizuku">Shizukuを開く</string>
+    <string name="btn_install_shizuku">Shizukuをインストール</string>
+    <string name="btn_connect">設定済み？接続する</string>
     <string name="btn_retry">再試行</string>
 
     <string name="app_list_title">アプリ非表示</string>
     <string name="search_hint">アプリを検索\u2026</string>
     <string name="filter_system">システム</string>
     <string name="filter_hidden_only">非表示のみ</string>
+    <string name="filter_removed_only">削除済みのみ</string>
     <string name="empty_list">アプリが見つかりません</string>
 
     <string name="status_hidden">非表示</string>
-    <string name="status_visible">表示中</string>
+    <string name="badge_removed">削除済み</string>
+    <string name="section_bloatware_header">削除推奨 (%d)</string>
 
     <string name="action_show">表示する</string>
     <string name="action_hide">非表示にする</string>
     <string name="action_delete">削除</string>
     <string name="action_cancel">キャンセル</string>
+    <string name="action_recover">復元</string>
 
     <string name="delete_title">アプリを削除</string>
     <string name="delete_confirm_message">%sを削除してもよろしいですか？</string>
@@ -33,4 +38,8 @@
     <string name="toast_operation_failed">操作に失敗: %s</string>
     <string name="toast_error">エラー: %s</string>
     <string name="toast_service_disconnected">サービス未接続</string>
+    <string name="toast_recovered">%sを復元しました</string>
+
+    <string name="shizuku_active">Shizukuは有効です — 問題ありません</string>
+    <string name="shizuku_inactive_hint">Shizukuが未接続です。タップして設定。</string>
 </resources>

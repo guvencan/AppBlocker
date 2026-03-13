@@ -4,22 +4,27 @@
     <string name="setup_step1">Instala Shizuku desde la Play Store</string>
     <string name="setup_step2">Activa la depuración inalámbrica en Opciones de desarrollador</string>
     <string name="setup_step3">Abre Shizuku y otorga permiso a AppVault</string>
-    <string name="btn_connect">Conectar a Shizuku</string>
+    <string name="btn_open_shizuku">Abrir Shizuku</string>
+    <string name="btn_install_shizuku">Instalar Shizuku</string>
+    <string name="btn_connect">¿Ya configurado? Conectar</string>
     <string name="btn_retry">Reintentar</string>
 
     <string name="app_list_title">Ocultar apps</string>
     <string name="search_hint">Buscar app\u2026</string>
     <string name="filter_system">Sistema</string>
     <string name="filter_hidden_only">Solo ocultas</string>
+    <string name="filter_removed_only">Solo eliminadas</string>
     <string name="empty_list">No se encontraron aplicaciones</string>
 
     <string name="status_hidden">Oculta</string>
-    <string name="status_visible">Visible</string>
+    <string name="badge_removed">eliminada</string>
+    <string name="section_bloatware_header">Recomendado para eliminar (%d)</string>
 
     <string name="action_show">Mostrar</string>
     <string name="action_hide">Ocultar</string>
     <string name="action_delete">Eliminar</string>
     <string name="action_cancel">Cancelar</string>
+    <string name="action_recover">Recuperar</string>
 
     <string name="delete_title">Eliminar aplicación</string>
     <string name="delete_confirm_message">¿Estás seguro de que deseas eliminar %s?</string>
@@ -33,4 +38,8 @@
     <string name="toast_operation_failed">Operación fallida: %s</string>
     <string name="toast_error">Error: %s</string>
     <string name="toast_service_disconnected">Servicio no conectado</string>
+    <string name="toast_recovered">%s recuperada</string>
+
+    <string name="shizuku_active">Shizuku está activo — todo está bien</string>
+    <string name="shizuku_inactive_hint">Shizuku no conectado. Toca para configurar.</string>
 </resources>
