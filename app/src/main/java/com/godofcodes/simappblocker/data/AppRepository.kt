@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import com.godofcodes.simappblocker.AppItem
 import com.godofcodes.simappblocker.Bloatware
 import com.godofcodes.simappblocker.IAppManager
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.flatMapMerge
 import kotlinx.coroutines.flow.flow
@@ -16,6 +17,7 @@ class AppRepository(
     private val appManager: IAppManager? = null
 ) {
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     suspend fun getInstalledApps(): List<AppItem> {
         val pm = context.packageManager
         val installed = pm.getInstalledApplications(PackageManager.MATCH_DISABLED_COMPONENTS)
