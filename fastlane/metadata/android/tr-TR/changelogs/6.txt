@@ -1,0 +1,2 @@
+- Performans iyileştirmesi: uygulama etiketleri artık paralel yükleniyor (büyük listelerde 4x daha hızlı)
+- Hata düzeltmeleri

@@ -1,0 +1,2 @@
+- Melhoria de desempenho: rótulos de apps agora carregam em paralelo (4x mais rápido em listas grandes)
+- Correções de bugs

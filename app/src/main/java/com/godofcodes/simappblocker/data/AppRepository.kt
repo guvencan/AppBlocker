@@ -6,13 +6,17 @@ import android.content.pm.PackageManager
 import com.godofcodes.simappblocker.AppItem
 import com.godofcodes.simappblocker.Bloatware
 import com.godofcodes.simappblocker.IAppManager
+import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.flatMapMerge
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.toList
 
 class AppRepository(
     private val context: Context,
     private val appManager: IAppManager? = null
 ) {
 
-    fun getInstalledApps(): List<AppItem> {
+    suspend fun getInstalledApps(): List<AppItem> {
         val pm = context.packageManager
         val installed = pm.getInstalledApplications(PackageManager.MATCH_DISABLED_COMPONENTS)
         val disabled = getDisabledPackages()
@@ -20,34 +24,38 @@ class AppRepository(
 
         val installedItems = installed
             .filter { it.packageName != context.packageName }
-            .mapNotNull { info ->
-                try {
-                    val label = pm.getApplicationLabel(info).toString()
-                    val isHidden = disabled.contains(info.packageName)
-                    val isSystem = (info.flags and ApplicationInfo.FLAG_SYSTEM) != 0
-                    val isBloatware = Bloatware.packages.contains(info.packageName)
-                    AppItem(info.packageName, label, null, isHidden, isSystem, isBloatware = isBloatware, isUninstalled = false)
-                } catch (e: Exception) {
-                    null
+            .asFlow()
+            .flatMapMerge(concurrency = 4) { info ->
+                flow {
+                    try {
+                        val label = pm.getApplicationLabel(info).toString()
+                        val isHidden = disabled.contains(info.packageName)
+                        val isSystem = (info.flags and ApplicationInfo.FLAG_SYSTEM) != 0
+                        val isBloatware = Bloatware.packages.contains(info.packageName)
+                        emit(AppItem(info.packageName, label, null, isHidden, isSystem, isBloatware = isBloatware, isUninstalled = false))
+                    } catch (_: Exception) {}
                 }
             }
+            .toList()
 
         val installedPkgNames = installedItems.map { it.packageName }.toSet()
 
         val uninstalledItems = uninstalledPkgs
             .filter { it !in installedPkgNames }
-            .mapNotNull { pkg ->
-                try {
-                    @Suppress("DEPRECATION")
-                    val info = pm.getApplicationInfo(pkg, PackageManager.GET_UNINSTALLED_PACKAGES)
-                    val label = pm.getApplicationLabel(info).toString()
-                    val isSystem = (info.flags and ApplicationInfo.FLAG_SYSTEM) != 0
-                    val isBloatware = Bloatware.packages.contains(pkg)
-                    AppItem(pkg, label, null, isHidden = false, isSystem = isSystem, isBloatware = isBloatware, isUninstalled = true)
-                } catch (e: Exception) {
-                    null
+            .asFlow()
+            .flatMapMerge(concurrency = 4) { pkg ->
+                flow {
+                    try {
+                        @Suppress("DEPRECATION")
+                        val info = pm.getApplicationInfo(pkg, PackageManager.GET_UNINSTALLED_PACKAGES)
+                        val label = pm.getApplicationLabel(info).toString()
+                        val isSystem = (info.flags and ApplicationInfo.FLAG_SYSTEM) != 0
+                        val isBloatware = Bloatware.packages.contains(pkg)
+                        emit(AppItem(pkg, label, null, isHidden = false, isSystem = isSystem, isBloatware = isBloatware, isUninstalled = true))
+                    } catch (_: Exception) {}
                 }
             }
+            .toList()
 
         return (installedItems + uninstalledItems)
             .sortedWith(compareBy({ it.isUninstalled }, { !it.isBloatware }, { !it.isHidden }, { it.isSystem }, { it.label.lowercase() }))

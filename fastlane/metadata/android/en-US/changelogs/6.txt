@@ -1,0 +1,2 @@
+- Performance improvement: app labels now load in parallel (4x faster on large app lists)
+- Bug fixes

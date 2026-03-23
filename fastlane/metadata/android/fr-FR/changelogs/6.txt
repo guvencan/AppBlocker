@@ -1,0 +1,2 @@
+- Amélioration des performances : les labels d'applications se chargent désormais en parallèle (4x plus rapide sur les grandes listes)
+- Corrections de bugs

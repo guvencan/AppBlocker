@@ -1,0 +1,2 @@
+- Performance-Verbesserung: App-Namen werden jetzt parallel geladen (4x schneller bei großen Listen)
+- Fehlerbehebungen
